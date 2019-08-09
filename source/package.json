@@ -1,0 +1,70 @@
+{
+  "name": "BaseProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "tslint": "tslint './src/**/*.{ts,tsx}'",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "build:tsc": "tsc && npm run tslint-check && npm run tslint",
+    "ios": "npm run build:tsc && ENVFILE=./env/.env.development react-native run-ios",
+    "android": "npm run build:tsc && ENVFILE=./env/.env.development react-native run-android"
+  },
+  "dependencies": {
+    "@types/react-redux": "^6.0.1",
+    "axios": "^0.19.0",
+    "crypto-js": "^3.1.9-1",
+    "lottie-ios": "^2.5.3",
+    "lottie-react-native": "^2.5.11",
+    "moment": "^2.24.0",
+    "react": "16.6.3",
+    "react-native": "0.58.6",
+    "react-native-animatable": "^1.3.2",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-navigation": "^3.11.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/react": "^16.8.19",
+    "@types/react-native": "^0.57.62",
+    "@types/react-test-renderer": "^16.8.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "24.8.0",
+    "jest": "24.8.0",
+    "metro-react-native-babel-preset": "0.54.1",
+    "prettier": "1.18.2",
+    "react-native-typescript-transformer": "^1.2.12",
+    "react-test-renderer": "16.6.3",
+    "reactotron-react-native": "^3.6.2",
+    "redux-devtools": "^3.5.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.5.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  }
+}
